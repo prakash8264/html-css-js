@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shop</title>
+  <style>
+    :root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #1f1f1f;
+  --price: #2f7d4f;
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+}
+
+/* ===========================
+   BENTO GRID
+=========================== */
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  /* Fill empty spaces automatically */
+  grid-auto-flow: dense;
+}
+
+/* ===========================
+   PRODUCT CARD
+=========================== */
+
+.product {
+  background: white;
+  border-radius: 20px;
+  padding: 12px;
+  border: 1px solid var(--border);
+
+  transition: 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,.12);
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.product img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
+/* Bigger image for featured cards */
+
+.product:nth-child(1) img,
+.product:nth-child(12) img,
+.product:nth-child(27) img {
+  aspect-ratio: 16 / 7;
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.product p {
+  font-size: 18px;
+  font-weight: bold;
+
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.product span {
+  color: var(--price);
+  font-weight: 600;
+}
+
+/* ===========================
+   BENTO SIZES
+=========================== */
+
+.product:nth-child(1) {
+  grid-column: span 2;
+}
+
+.product:nth-child(7) {
+  grid-row: span 2;
+}
+
+.product:nth-child(12) {
+  grid-column: span 2;
+}
+
+.product:nth-child(20) {
+  grid-row: span 2;
+}
+
+.product:nth-child(27) {
+  grid-column: span 2;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 1000px) {
+
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product:nth-child(1),
+  .product:nth-child(7),
+  .product:nth-child(12),
+  .product:nth-child(20),
+  .product:nth-child(27) {
+
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 600px) {
+
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+
+  .product:nth-child(n) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="product-list">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Nike running shoe">
+      <p>Duramo SL 2.0</p>
+      <span>$68.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=600&q=80" alt="Air Max shoe">
+      <p>Air Max 90</p>
+      <span>$99.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=600&q=80" alt="Classic sneaker">
+      <p>Classic Runner</p>
+      <span>$74.50</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=600&q=80" alt="Sport shoe">
+      <p>Sport Flex</p>
+      <span>$82.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="White sneaker">
+      <p>White Blaze</p>
+      <span>$65.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://imgs.search.brave.com/EcR2ysiPXAIdPv_o_KYdkcYvdKnIkIfOpwOl4tKNuhg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/amFja2pvbmVzLmlu/L2Nkbi9zaG9wL2Zp/bGVzLzkwMTAyOTgw/Ml9nNC5qcGc_dj0x/NzQ1MzQ1NzkyJndp/ZHRoPTEwODA" alt="Blue sneaker">
+      <p>Blue Tempo</p>
+      <span>$78.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=600&q=80" alt="Casual shoe">
+      <p>Urban Lite</p>
+      <span>$59.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?auto=format&fit=crop&w=600&q=80" alt="Training shoe">
+      <p>Training Pro</p>
+      <span>$88.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80" alt="Street shoe">
+      <p>Street Runner</p>
+      <span>$72.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?auto=format&fit=crop&w=600&q=80" alt="Trail shoe">
+      <p>Trail Master</p>
+      <span>$95.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1463100099107-aa0980c362e6?auto=format&fit=crop&w=600&q=80" alt="Court shoe">
+      <p>Court Ace</p>
+      <span>$85.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://imgs.search.brave.com/u2czQtfvEGO7Sm1OXFxTYAz749rQXB50egkNxAZW9UU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9sZWF0aGVy/LWJyb3duLW1lbnMt/c25lYWtlcnMtd2hp/dGUtMjYwbnctMjEw/NjEwNDA5My5qcGc" alt="Lifestyle shoe">
+      <p>Lifestyle Plus</p>
+      <span>$69.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=600&q=80" alt="Premium sneaker">
+      <p>Premium Step</p>
+      <span>$109.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1521093470119-a3acdc43374a?auto=format&fit=crop&w=600&q=80" alt="Lightweight shoe">
+      <p>Lightweight X</p>
+      <span>$73.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=600&q=80" alt="Eco shoe">
+      <p>Eco Motion</p>
+      <span>$64.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Balanced shoe">
+      <p>Balance Pro</p>
+      <span>$91.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" alt="Fade shoe">
+      <p>Fade Runner</p>
+      <span>$77.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80" alt="Flex sneaker">
+      <p>Flex Wave</p>
+      <span>$84.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80" alt="Performance shoe">
+      <p>Performance One</p>
+      <span>$97.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80" alt="Everyday shoe">
+      <p>Everyday Move</p>
+      <span>$62.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1579338559194-a162d19bf842?auto=format&fit=crop&w=600&q=80" alt="Speed shoe">
+      <p>Speed Dash</p>
+      <span>$89.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80" alt="Cloud shoe">
+      <p>Cloud Walk</p>
+      <span>$75.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80" alt="Sprint shoe">
+      <p>Sprint Boost</p>
+      <span>$93.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=600&q=80" alt="Comfort shoe">
+      <p>Comfort Flow</p>
+      <span>$66.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80" alt="Retro shoe">
+      <p>Retro Kick</p>
+      <span>$79.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80" alt="Simple sneaker">
+      <p>Simple Step</p>
+      <span>$58.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Daily comfort shoe">
+      <p>Daily Comfort</p>
+      <span>$71.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=600&q=80" alt="Modern shoe">
+      <p>Modern Glide</p>
+      <span>$86.00</span>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=600&q=80" alt="Weekend shoe">
+      <p>Weekend Pulse</p>
+      <span>$76.00</span>
+    </div>
+  </div>
+</body>
+</html>
