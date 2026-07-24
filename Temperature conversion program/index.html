@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A sleek, modern temperature conversion web application with real-time conversion, dynamic visual gauge, and cool animations.">
+  <meta name="theme-color" content="#090d16">
+  <title>Temperature Converter | Modern Dynamic Web App</title>
+  
+  <!-- FontAwesome Icons & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Dynamic Background Glowing Orbs -->
+  <div class="background-glow">
+    <div class="glow-orb glow-orb-1" id="glowOrb"></div>
+    <div class="glow-orb glow-orb-2"></div>
+  </div>
+
+  <div class="app-container">
+    <main class="glass-card">
+      <header class="header">
+        <div class="header-badge">
+          <i class="fa-solid fa-bolt"></i> Live Converter
+        </div>
+        <h1>Temperature Converter</h1>
+      </header>
+
+      <form id="tempForm" onsubmit="event.preventDefault(); convert();">
+        
+        <!-- Input Group -->
+        <div class="input-group">
+          <label for="textbox" class="input-label">Enter Temperature</label>
+          <div class="input-wrapper">
+            <input id="textbox" type="number" step="any" placeholder="0" value="0">
+          </div>
+        </div>
+
+        <!-- Unit Selector Segmented Tabs -->
+        <div class="input-group">
+          <label class="input-label">Select Target Unit</label>
+          <div class="unit-selector">
+            <div class="radio-tab">
+              <input type="radio" id="toFahrenheit" name="unit" checked>
+              <label for="toFahrenheit">
+                <i class="fa-solid fa-temperature-arrow-up"></i> to °F
+              </label>
+            </div>
+            <div class="radio-tab">
+              <input type="radio" id="toCelsius" name="unit">
+              <label for="toCelsius">
+                <i class="fa-solid fa-temperature-arrow-down"></i> to °C
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Temperature Presets -->
+        <div class="preset-section">
+          <label class="input-label">Quick Presets</label>
+          <div class="presets-container">
+            <button type="button" class="preset-chip" onclick="setPreset(0, 'C')">
+              🧊 Freezing (0°C)
+            </button>
+            <button type="button" class="preset-chip" onclick="setPreset(22, 'C')">
+              🛋️ Room (22°C)
+            </button>
+            <button type="button" class="preset-chip" onclick="setPreset(37, 'C')">
+              🌡️ Body (37°C)
+            </button>
+            <button type="button" class="preset-chip" onclick="setPreset(100, 'C')">
+              ♨️ Boiling (100°C)
+            </button>
+          </div>
+        </div>
+
+        <!-- Submit Convert Button -->
+        <button id="submit" type="button" class="btn-submit" onclick="convert()">
+          <i class="fa-solid fa-calculator"></i> Convert Temperature
+        </button>
+
+        <!-- Visual Temperature Scale Gauge -->
+        <div class="gauge-section">
+          <div class="gauge-header">
+            <span>Cold (0°C / 32°F)</span>
+            <span>Hot (100°C / 212°F)</span>
+          </div>
+          <div class="gauge-track">
+            <div class="gauge-fill" id="gaugeFill"></div>
+          </div>
+        </div>
+
+        <!-- Result Display Box -->
+        <div class="result-card">
+          <button type="button" class="copy-btn" id="copyBtn" onclick="copyResult()" title="Copy to clipboard">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+          <span class="copy-tooltip" id="copyTooltip">Copied!</span>
+          <span class="result-label">Converted Value</span>
+          <p id="result">0.0°F</p>
+        </div>
+
+      </form>
+
+      <footer class="footer">
+        Crafted with <i class="fa-solid fa-heart" style="color: #ff4b2b;"></i> & Modern UI
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

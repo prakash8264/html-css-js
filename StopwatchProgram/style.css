@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f4f6f8;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#myH1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+#container {
+  background-color: #ffffff;
+  padding: 36px 48px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  border: 1px solid #e2e8f0;
+}
+
+#display {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 28px;
+  letter-spacing: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+#controls {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+#controls button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+#start {
+  background-color: #22c55e;
+  color: #ffffff;
+}
+
+#start:hover {
+  background-color: #16a34a;
+  transform: translateY(-1px);
+}
+
+#start:active {
+  transform: translateY(0);
+}
+
+#stop {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+#stop:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+#stop:active {
+  transform: translateY(0);
+}
+
+#reset {
+  background-color: #64748b;
+  color: #ffffff;
+}
+
+#reset:hover {
+  background-color: #475569;
+  transform: translateY(-1px);
+}
+
+#reset:active {
+  transform: translateY(0);
+}
