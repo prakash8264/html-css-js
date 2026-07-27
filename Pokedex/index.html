@@ -3,13 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokedex</title>
+  <title>Pokédex</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <input type="text" id="pokemonName" placeholder="Enter Pokenmon name">
-  <button onclick="fetchData()">Fetch Pokemon</button><br>
 
-  <img src="" alt="Pokemon image" id="pokemonSprite" style="display: none;">
+  <div class="pokedex">
+    <!-- Pokédex Header -->
+    <div class="header">
+      <div class="lights">
+        <span class="blue-light"></span>
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <h1>POKÉDEX</h1>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-box">
+      <input type="text" id="pokemonInput" placeholder="Enter Pokémon name or ID...">
+      <button id="searchBtn" onclick="fetchPokemon()">Search</button>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Screen Area -->
+    <div class="screen">
+      <img id="pokemonSprite" src="" alt="Pokémon image" style="display: none;">
+      <p id="errorMessage" class="error-msg"></p>
+    </div>
+
+    <!-- Info Section -->
+    <div id="pokemonInfo" class="info-box" style="display: none;">
+      <h2 id="pokemonName"></h2>
+      <p><strong>ID:</strong> <span id="pokemonId"></span></p>
+      <p><strong>Type:</strong> <span id="pokemonTypes"></span></p>
+      <p><strong>Height:</strong> <span id="pokemonHeight"></span></p>
+      <p><strong>Weight:</strong> <span id="pokemonWeight"></span></p>
+      <p><strong>Base Exp:</strong> <span id="pokemonExp"></span></p>
+      <p><strong>Abilities:</strong> <span id="pokemonAbilities"></span></p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

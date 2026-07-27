@@ -1,0 +1,151 @@
+/* Page Setup */
+body {
+  font-family: sans-serif;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Pokédex Card */
+.pokedex {
+  background-color: #da2121;
+  width: 100%;
+  max-width: 360px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: white;
+  box-sizing: border-radius;
+}
+
+/* Header Lights & Title */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.lights {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blue-light {
+  width: 25px;
+  height: 25px;
+  background-color: #3b82f6;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ef4444;
+}
+
+.yellow {
+  background-color: #f59e0b;
+}
+
+.green {
+  background-color: #10b981;
+}
+
+.header h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-box button {
+  padding: 8px 14px;
+  background-color: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.search-box button:hover {
+  background-color: #111827;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 12px 0;
+}
+
+/* Display Screen */
+.screen {
+  background-color: white;
+  border-radius: 10px;
+  min-height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.screen img {
+  width: 130px;
+  height: 130px;
+}
+
+.error-msg {
+  color: #dc2626;
+  font-weight: bold;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Info Box */
+.info-box {
+  background-color: white;
+  color: #1f2937;
+  border-radius: 10px;
+  padding: 12px 15px;
+  min-height: 140px;
+}
+
+.info-box h2 {
+  margin: 0 0 8px 0;
+  color: #dc2626;
+  font-size: 1.2rem;
+}
+
+.info-box p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
